@@ -1,24 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="flex-col max-w-6xl mx-auto">
+<div class="max-w-6xl mx-auto">
 
-    <header class="fixed flex z-50 content-center items-center justify-between
-                    max-w-6xl mx-auto h-16 top-0 inset-x-0 px-6
-                    bg-blue-100 border-r-3 border-l-3 border-b-3 rounded-b-lg
-                    border-blue-100 drop-shadow-md">
-        <div>
-            <h1>mikafaro</h1>
-        </div>
-        <div>
-            Navbar
-        </div>
-        <div>
-            Socials
-        </div>
+    <header class="fixed flex z-50 items-center justify-center
+                    max-w-6xl mx-auto h-20 top-0 inset-x-0 px-6
+                    bg-blue-100 border-x-2 border-b-2 rounded-b-lg
+                    border-blue-100 drop-shadow-xl">
+
+        <NavMenu />
+        
     </header>
 
-    <div class="mt-20">
+    <div class="mt-26">
         @Body
     </div>
+
+    <footer class="fixed flex z-50 items-center justify-between
+                    bottom-0 inset-x-0 h-12 max-w-6xl mx-auto
+                    rounded-t-lg border-x-2 border-t-2 border-blue-100
+                    bg-blue-100">
+        <ThemeSwitcher />
+        <Socials />
+    </footer>
 
 </div>
