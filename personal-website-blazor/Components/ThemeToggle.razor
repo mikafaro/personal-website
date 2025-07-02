@@ -1,0 +1,22 @@
+@inject ThemeService Theme
+<div class="flex">
+    <button class="border-2" @onclick="LightToggle">Light Mode</button>
+    <button class="border-2" @onclick="DarkToggle">Dark Mode</button>
+</div>
+
+@code {
+    private async Task LightToggle()
+    {
+        await Theme.LightToggle();
+    }
+
+    private async Task DarkToggle()
+    {
+        await Theme.DarkToggle();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Theme.InitializeAsync();
+    }
+}
