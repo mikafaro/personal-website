@@ -30,6 +30,7 @@
     /* Accents for small details */
     --color-arcticaccent-pink: oklch(0.8684 0.019 17.52);
     --color-arcticaccent-lilac: oklch(0.7811 0.0514 278.92);
+    --color-arcticaccent-aurora: oklch(0.8412 0.0693 155.72);
 
 
     /* --- Dark Arctic Palette */
@@ -53,4 +54,5 @@
     /* Accents for small details */
     --color-darkarcticaccent-pink: oklch(0.7253 0.1752 349.76);
     --color-darkarcticaccent-lilac: oklch(0.709 0.1592 293.54);
+    --color-darkarcticaccent-aurora: oklch(0.8482 0.1091 164.66);
 }
