@@ -2,7 +2,7 @@
 
     /* Font */
 
-    --font-sans: Inter, sans-serif;
+    --font-inter: Inter, sans-serif;
 
     /* Easing Functions */
 
@@ -27,10 +27,14 @@
     --color-arcticblue-deep: oklch(0.5154 0.0933 249.64);
     --color-arcticblue-teal: oklch(0.756 0.0859 178.26);
 
-    /* Accents for small details */
+    /* Aurora inspired accents */
+    --color-arcticaurora-light: oklch(0.9289 0.0397 156.84);
+    --color-arcticaurora-default: oklch(0.8412 0.0693 155.72);
+    --color-arcticaurora-deep: oklch(0.7059 0.082 157.19);
+
+    /* Other accents for small details */
     --color-arcticaccent-pink: oklch(0.8684 0.019 17.52);
     --color-arcticaccent-lilac: oklch(0.7811 0.0514 278.92);
-    --color-arcticaccent-aurora: oklch(0.8412 0.0693 155.72);
 
 
     /* --- Dark Arctic Palette */
@@ -51,8 +55,12 @@
     --color-darkarcticblue-deep: oklch(0.7535 0.139 232.66);
     --color-darkarcticblue-teal: oklch(0.7845 0.1325 181.91);
 
-    /* Accents for small details */
+    /* Aurora inspired accents for dark theme */
+    --color-darkarcticaurora-light: oklch(0.93 0.0803 172.29);
+    --color-darkarcticaurora-default: oklch(0.8482 0.1091 164.66);
+    --color-darkarcticaurora-deep: oklch(0.7415 0.1124 168.25);
+
+    /* Other accents for small details */
     --color-darkarcticaccent-pink: oklch(0.7253 0.1752 349.76);
     --color-darkarcticaccent-lilac: oklch(0.709 0.1592 293.54);
-    --color-darkarcticaccent-aurora: oklch(0.8482 0.1091 164.66);
 }
