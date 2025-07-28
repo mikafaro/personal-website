@@ -19,7 +19,7 @@
     /* Cool grays for the subtle elements, text */
     --color-arcticgray-light: oklch(0.9022 0.0146 244.73);
     --color-arcticgray-default: oklch(0.7834 0.0274 242.84);
-    --color-arcticgray-dark: oklch(0.5846 0.0337 246.88);
+    --color-arcticgray-dark: oklch(0.4214 0.0273 248.48);
 
     /* Icy blues and subtle teals, more prominent text, standout elements */
     --color-arcticblue-light: oklch(0.8648 0.0495 232.28);

@@ -1,7 +1,13 @@
 @inject ThemeService Theme
-<div class="flex">
-    <button class="border-2" @onclick="LightToggle">Light Mode</button>
-    <button class="border-2" @onclick="DarkToggle">Dark Mode</button>
+<div class="flex space-x-1 items-center">
+    <button class="flex items-center justify-center cursor-pointer p-1 rounded-md
+                   h-8 w-8 @SunBg" @onclick="LightToggle">
+        <Icon Name="Sun" CssClass="h-5 w-5 text-arcticblue-deep" />
+    </button>
+    <button class="flex items-center justify-center cursor-pointer p-1 rounded-md
+                   h-8 w-8 @MoonBg" @onclick="DarkToggle">
+        <Icon Name="Moon" CssClass="h-5 w-5 text-arcticblue-deep" />
+    </button>
 </div>
 
 @code {
@@ -19,4 +25,23 @@
     {
         await Theme.InitializeAsync();
     }
+
+    private string ButtonBgClass = "bg-arcticaurora-light";
+
+    private string SunBg
+    {
+        get
+        {
+            return Theme.IsDarkMode() ? "" : ButtonBgClass;
+        }
+    }
+
+    private string MoonBg
+    {
+        get
+        {
+            return Theme.IsDarkMode() ? ButtonBgClass : "";
+        }
+    }
+
 }

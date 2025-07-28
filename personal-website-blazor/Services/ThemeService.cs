@@ -32,4 +32,9 @@ public class ThemeService
         if (isDark) return;
         await ToggleTheme();
     }
+
+    public bool IsDarkMode()
+    {
+        return isDark;
+    }
 }
