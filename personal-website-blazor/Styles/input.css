@@ -3,3 +3,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.navmenutext {
+    @apply font-medium border-b-2 text-arcticblue-deep border-arcticblue-deep hover:text-arcticaurora-deep hover:border-arcticaurora-deep hover:drop-shadow-lg hover:drop-shadow-arcticaurora-light;
+}
