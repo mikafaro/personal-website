@@ -4,5 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .navmenutext {
-    @apply font-medium border-b-2 text-arcticblue-deep border-arcticblue-deep hover:text-arcticaurora-deep hover:border-arcticaurora-deep hover:drop-shadow-lg hover:drop-shadow-arcticaurora-light;
+    @apply font-medium border-b-2 text-arcticblue-deep border-arcticblue-deep 
+         hover:text-arcticaurora-deep hover:border-arcticaurora-deep hover:drop-shadow-sm
+         hover:drop-shadow-arcticaurora-light/50 dark:text-darkarcticblue-light dark:border-darkarcticblue-light
+         dark:hover:text-darkarcticaurora-deep dark:hover:border-darkarcticaurora-deep dark:hover:drop-shadow-darkarcticaurora-light/50;
 }
