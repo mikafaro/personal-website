@@ -1,15 +1,16 @@
 @using PersonalWebsiteBlazor.Models
 
-<article class="flex flex-row rounded-lg border-1 min-h-50 shadow-lg
-                mx-2 md:mx-4 my-4 cursor-default
+<article class="flex flex-row rounded-lg min-h-50 shadow-lg
+                mx-2 md:mx-4 my-4 cursor-default hover:scale-102
+                transition-all duration-300 ease-in-out
               bg-arctic-snow dark:bg-darkarctic-midnight
               border-arcticblue-default dark:border-darkarcticblue-default">
 
-    <div class="">
-        <img src=@Project.Image />
+    <div class="hidden md:flex aspect-square flex-shrink-0">
+        <img src=@Project.Image class="h-full w-full object-cover rounded-l-lg" />
     </div>
 
-    <section class="flex flex-col w-full m-1">
+    <section class="flex flex-col w-full m-1 ml-4">
 
         <div class="flex flex-row items-center justify-between">
 
@@ -20,7 +21,7 @@
                 }
             </div>
 
-            <div class="flex m-1 p-1">
+            <div class="flex p-1">
                 <Pill PillText=@Project.ProjectEffortType Style="secondary" />
             </div>
         </div>

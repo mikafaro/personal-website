@@ -9,7 +9,7 @@ namespace PersonalWebsiteBlazor.Models
         public required List<string> Technologies { get; set; } = new List<string>();
         public required string ProjectEffortType { get; set; }
         public required string Description { get; set; }
-        public string? CodeLink { get; set; }
+        public string? CodeURL { get; set; }
         public string? Image { get; set; }
     }
 
