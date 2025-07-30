@@ -4,7 +4,7 @@ namespace PersonalWebsiteBlazor.Models
 {
     public class Project
     {
-        public required string Name { get; set; }
+        public required string ProjectTitle { get; set; }
         public required int Year { get; set; }
         public required List<string> Technologies { get; set; } = new List<string>();
         public required string ProjectEffortType { get; set; }
