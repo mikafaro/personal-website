@@ -4,12 +4,12 @@
 
 @code {
     [Parameter]
-    public string PillText { get; set; }
+    public required string PillText { get; set; }
 
     [Parameter]
-    public string Style { get; set; }
+    public required string Style { get; set; }
 
-    private string CssClass;
+    private string? CssClass;
 
     protected override void OnParametersSet()
     {
