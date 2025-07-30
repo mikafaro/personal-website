@@ -1,3 +1,32 @@
 @page "/projects"
 
-<h1>Projects</h1>
+@using PersonalWebsiteBlazor.Models
+
+<div class="flex flex-col max-w-5xl mx-auto">
+
+    <Title>Projects</Title>
+
+    @foreach (var project in projects)
+    {
+        <ProjectCard Project="project" />
+    }
+
+</div>
+
+@code {
+    List<Project> projects = new List<Project>
+    {
+        new Project {
+            Name = "The Pursuit of Koala Tea",
+            Year = 2023,
+            Role = "Team Member",
+            Technologies = ["Java", "LibGDX", "MVC"],
+            Description = @"This roguelike game about a koala looking for tea
+                            was a collaborative effort between myself and 3 other students
+                            during the course Introduction to System Design at UiB, as part of
+                            our term project.",
+            CodeLink = null,
+            Image = null
+        },
+    };
+}

@@ -1,0 +1,50 @@
+@using PersonalWebsiteBlazor.Models
+
+<article class="flex flex-row rounded-lg border-1 min-h-50 shadow-lg
+                mx-2 md:mx-4 my-4 cursor-default
+              bg-arctic-snow dark:bg-darkarctic-midnight
+              border-arcticblue-default dark:border-darkarcticblue-default">
+
+    <div class="">
+        <img src=@Project.Image />
+    </div>
+
+    <section class="flex flex-col w-full m-1">
+
+        <div class="flex flex-row items-center justify-between">
+
+            <div class="flex flex-wrap space-x-1 m-1 p-1">
+                @foreach (var item in Project.Technologies)
+                {
+                    <Pill PillText=@item Style="primary" />
+                }
+            </div>
+
+            <div class="flex m-1 p-1">
+                <Pill PillText=@Project.Role Style="secondary" />
+            </div>
+        </div>
+
+        <div class="m-1 px-1">
+            <div class="flex flex-row justify-between">
+                <h3 class="font-extrabold text-xl
+                         text-arcticblue-deep dark:text-darkarcticblue-default">
+                    @Project.Name
+                </h3>
+                <time class="text-sm" datetime="@Project.Year.ToString()">@Project.Year</time>
+            </div>
+            <p class="md:pr-8 pt-2">@Project.Description</p>
+        </div>
+
+        <footer class="m-1 px-1">
+
+        </footer>
+
+    </section>
+
+</article>
+
+@code {
+    [Parameter]
+    public required Project Project { get; set; }
+}
