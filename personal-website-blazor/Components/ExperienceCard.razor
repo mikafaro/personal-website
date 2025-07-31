@@ -1,8 +1,71 @@
 @using PersonalWebsiteBlazor.Models
 
-<article>
+<article class="flex flex-row rounded-lg min-h-60 shadow-lg
+                mx-2 md:mx-4 my-4 cursor-default hover:scale-102
+                transition-all duration-300 ease-in-out
+                bg-arctic-snow dark:bg-darkarctic-midnight
+                border-arcticblue-default dark:border-darkarcticblue-default">
 
+    <div class="hidden md:flex flex-shrink-0">
+        <img src=@Experience.Image class="" />
+    </div>
 
+    <section class="flex flex-col w-full m-1 ml-4">
+
+        <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-wrap m-1 p-1">
+                @foreach (var affiliation in Experience.Affiliations)
+                {
+                    <Pill PillText=@affiliation Style="secondary" />
+                }
+            </div>
+            <div class="flex p-1">
+                <Pill Pilltext=@Experience.Type.ToString() Style="secondary" />
+            </div>
+        </div>
+
+        <div class="mx-1 mt-1 px-1 flex-grow">
+            <div class="flex flex-row justify-between">
+                <h3 class="font-extrabold text-xl
+                           text-arcticblue-deep dark:text-darkarcticblue-default">
+                    @Experience.ExperienceTitle
+                </h3>
+                <time class="text-sm">
+                    @Experience.FromDate.ToString("MMM yyyy")
+                    -
+                    @(Experience.ToDate.HasValue ? Experience.ToDate.Value.ToString("MMM yyyy") : "Present")
+                </time>
+            </div>
+            <ul class="m-2 ml-4 text-balance list-disc space-y-2">
+                @foreach (var highlight in Experience.Highlights)
+                {
+                    <li>
+                        @highlight
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <footer class="flex items-center justify-between">
+            <div class="flex flex-wrap space-x-1 m-1 p-1">
+                @foreach (var item in Experience.Keywords)
+                {
+                    <Pill PillText=@item Style="primary" />
+                }
+            </div>
+            @if (Experience.LinkURL != null)
+            {
+                <a href=@Experience.LinkURL target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-center cursor-pointer m-1 p-1 rounded-md
+                          h-8 w-8 text-arcticaurora-default dark:text-darkarcticblue-deep
+                          dark:bg-darkarctic-twilight dark:border-darkarcticblue-deep
+                          border-1 hover:shadow-md dark:shadow-darkarcticblue-light">
+                    <Icon Name="Link" CssClass="" />
+                </a>
+            }
+        </footer>
+
+    </section>
 
 </article>
 

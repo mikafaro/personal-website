@@ -23,7 +23,22 @@
 @code {
     List<Experience> Education = new List<Experience>
     {
-        
+        new Experience
+        {
+            ExperienceTitle = "Bachelor of Science in Computer Technology",
+            Type = ExperienceType.Degree,
+            Affiliations = ["University of Bergen"],
+            FromDate = new DateOnly(2019, 08, 01),
+            ToDate = new DateOnly(2024, 06, 01),
+            Keywords = ["Programming Fundamentals", "Software Development",
+                         "Software Security", "Computer Networks", "Mathematics"],
+            Highlights = [@"The degree taught me the fundamentals of software development
+                            with concepts like OOP, Databases, Security and System Design.",
+                          @"As elective courses I explored different topics like Computer Security,
+                            Data Analysis, Category Theory and Computer Networks."],
+            Image = "",
+            LinkURL = "https://www4.uib.no/studier/program/informatikk-datateknologi-bachelor"
+        }
     };
 
     List<Experience> Employment = new List<Experience>
@@ -33,7 +48,7 @@
 
     protected override void OnInitialized()
     {
-        // Education = Education.OrderByDescending(E => E.FromDate).ToList();
-        // Employment = Employment.OrderByDescending(E => E.FromDate).ToList();
+        Education = Education.OrderByDescending(E => E.FromDate).ToList();
+        Employment = Employment.OrderByDescending(E => E.FromDate).ToList();
     }
 }
