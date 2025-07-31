@@ -43,16 +43,16 @@
             @if (Project.CodeURL != null)
             {
                 <a href=@Project.CodeURL target="_blank" rel="noopener noreferrer"
-                   class="flex items-center justify-center cursor-pointer p-1 rounded-md border-1
-                          h-8 w-18 space-x-2 text-arcticaurora-default dark:text-darkarcticaurora-default
-                          text-xs dark:bg-darkarctic-twilight hover:shadow-md dark:shadow-darkarcticaurora-deep">
-                    <p>Code</p>
-                    <Icon Name="Code" CssClass="h-5 w-5 text-arcticaurora-default dark:text-darkarcticaurora-default" />
+                   class="flex items-center justify-center cursor-pointer p-1 rounded-lg
+                          h-9 w-9 text-arcticblue-deep dark:text-darkarcticblue-light
+                          hover:bg-arcticaurora-deep/50 hover:shadow-md shadow-arcticgray-dark/50
+                          dark:hover:bg-darkarcticaurora-deep/50">
+                    <Icon Name="Code" CssClass="h-7 w-7" />
                 </a>
             }
             else
             {
-                <p class="text-xs dark:text-darkarcticgray-deep">The code for this project is not publicly available.</p>
+                <p class="text-xs text-arcticgray-default dark:text-darkarcticgray-deep">The code for this project is not publicly available.</p>
             }
         </footer>
 
