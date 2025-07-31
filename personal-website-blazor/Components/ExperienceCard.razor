@@ -56,11 +56,12 @@
             @if (Experience.LinkURL != null)
             {
                 <a href=@Experience.LinkURL target="_blank" rel="noopener noreferrer"
-                   class="flex items-center justify-center cursor-pointer m-1 p-1 rounded-md
-                          h-8 w-8 text-arcticaurora-default dark:text-darkarcticblue-deep
-                          dark:bg-darkarctic-twilight dark:border-darkarcticblue-deep
-                          border-1 hover:shadow-md dark:shadow-darkarcticblue-light">
-                    <Icon Name="Link" CssClass="" />
+                   class="flex items-center justify-center cursor-pointer m-1 rounded-lg
+                          h-9 w-9 hover:bg-arcticaccent-pink text-arcticblue-deep
+                          hover:shadow-md shadow-arcticgray-dark/50
+                          dark:text-arcticblue-light dark:hover:bg-darkarcticaccent-pink/50
+                          dark:shadow-darkarcticgray-light/50">
+                    <Icon Name="Link" CssClass="h-7 w-7" />
                 </a>
             }
         </footer>
