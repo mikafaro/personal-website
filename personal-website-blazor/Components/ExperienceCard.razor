@@ -28,11 +28,11 @@
 
         <div class="mx-1 mt-1 px-1 flex flex-col flex-grow">
             <div class="flex flex-row justify-between">
-                <h3 class="font-extrabold text-xl
+                <h3 class="font-extrabold text-xl font-montserrat
                            text-arcticblue-deep dark:text-darkarcticblue-default">
                     @Experience.ExperienceTitle
                 </h3>
-                <time class="text-sm">
+                <time class="text-sm italic">
                     @Experience.FromDate.ToString("MMM yyyy")
                     -
                     @(Experience.ToDate.HasValue ? Experience.ToDate.Value.ToString("MMM yyyy") : "Present")
