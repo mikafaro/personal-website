@@ -1,12 +1,14 @@
 @using PersonalWebsiteBlazor.Models
 
-<article class="flex flex-row rounded-lg min-h-60 shadow-lg
+<article class="flex flex-row rounded-lg min-h-80 shadow-lg
                 mx-2 md:mx-4 my-4 cursor-default hover:scale-102
-                transition-all duration-300 ease-in-out
+                transition-all duration-300 ease-out
                 bg-arctic-snow dark:bg-darkarctic-midnight
-                border-arcticblue-default dark:border-darkarcticblue-default">
+                border-arcticblue-default dark:border-darkarcticblue-default
+                shadow-arcticgray-light hover:shadow-arcticaurora-deep/50
+                dark:shadow-darkarcticgray-deep/50 dark:hover:shadow-darkarcticaurora-deep/50">
 
-    <div class="hidden md:flex flex-shrink-0">
+    <div class="hidden md:flex lg:aspect-[1/1.618] flex-shrink-0">
         <img src=@Experience.Image class="" />
     </div>
 
