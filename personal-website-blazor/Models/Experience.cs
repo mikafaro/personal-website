@@ -1,4 +1,3 @@
-
 namespace PersonalWebsiteBlazor.Models
 {
     public class Experience
@@ -21,5 +20,21 @@ namespace PersonalWebsiteBlazor.Models
         FullTimeEmployment,
         PartTimeEmployment,
         Internship
+    }
+
+    public static class ExperienceTypeExtensions
+    {
+        public static string ToDisplayString(this ExperienceType type)
+        {
+            return type switch
+            {
+                ExperienceType.FullTimeEmployment => "Full Time",
+                ExperienceType.PartTimeEmployment => "Part Time",
+                ExperienceType.Degree => "Degree",
+                ExperienceType.Certification => "Certification",
+                ExperienceType.Internship => "Internship",
+                _ => type.ToString()
+            };
+        }
     }
 }
