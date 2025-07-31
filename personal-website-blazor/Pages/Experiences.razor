@@ -59,7 +59,21 @@
 
     List<Experience> Employment = new List<Experience>
     {
-
+        new Experience
+        {
+            ExperienceTitle = "Teaching Assistant in Functional Programming",
+            Type = ExperienceType.PartTimeEmployment,
+            Affiliations = ["University of Bergen"],
+            FromDate = new DateOnly(2023,08,01),
+            ToDate = new DateOnly(2023,12,01),
+            Keywords = ["Functional Programming", "Haskell", "Mentoring"],
+            Highlights = [@"A semesterlong position in which I assisted a group of students with
+                            their weekly assignments and provided feedback on mandatory work.",
+                          @"The course taught fundamental functional programming concepts
+                            using Haskell as the programming language.",
+                          @"Fundamental concepts up to and including Monads were covered."],
+            Image = "",
+        }
     };
 
     protected override void OnInitialized()

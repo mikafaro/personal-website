@@ -1,8 +1,8 @@
 @using PersonalWebsiteBlazor.Models
 
-<article class="flex flex-row rounded-lg lg:min-h-100 shadow-lg
+<article class="flex flex-row rounded-lg lg:min-h-90 shadow-lg
                 mx-2 md:mx-4 my-4 cursor-default hover:scale-102
-                transition-all duration-300 ease-out
+                transition-all duration-300 ease-out overflow-auto
                 bg-arctic-snow dark:bg-darkarctic-midnight
                 border-arcticblue-default dark:border-darkarcticblue-default
                 shadow-arcticgray-light hover:shadow-arcticaurora-deep/50
@@ -38,7 +38,7 @@
                     @(Experience.ToDate.HasValue ? Experience.ToDate.Value.ToString("MMM yyyy") : "Present")
                 </time>
             </div>
-            <ul class="m-2 ml-4 my-auto text-balance list-disc space-y-2">
+            <ul class="m-2 ml-4 mt-3 text-balance list-disc space-y-2">
                 @foreach (var highlight in Experience.Highlights)
                 {
                     <li>
