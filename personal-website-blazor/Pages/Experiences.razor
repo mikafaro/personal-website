@@ -1,0 +1,39 @@
+@page "/experience"
+
+@using PersonalWebsiteBlazor.Models
+
+<div class="flex flex-col max-w-5xl mx-auto">
+
+    <Title>Education</Title>
+
+    @foreach (var EducationEntry in Education)
+    {
+        <ExperienceCard Experience="EducationEntry" />
+    }
+
+    <Title>Work Experience</Title>
+
+    @foreach (var EmploymentEntry in Employment)
+    {
+        <ExperienceCard Experience="EmploymentEntry" />
+    }
+
+</div>
+
+@code {
+    List<Experience> Education = new List<Experience>
+    {
+        
+    };
+
+    List<Experience> Employment = new List<Experience>
+    {
+
+    };
+
+    protected override void OnInitialized()
+    {
+        // Education = Education.OrderByDescending(E => E.FromDate).ToList();
+        // Employment = Employment.OrderByDescending(E => E.FromDate).ToList();
+    }
+}
