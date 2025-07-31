@@ -1,6 +1,6 @@
 @using PersonalWebsiteBlazor.Models
 
-<article class="flex flex-row rounded-lg min-h-80 shadow-lg
+<article class="flex flex-row rounded-lg lg:min-h-100 shadow-lg
                 mx-2 md:mx-4 my-4 cursor-default hover:scale-102
                 transition-all duration-300 ease-out
                 bg-arctic-snow dark:bg-darkarctic-midnight
@@ -15,7 +15,7 @@
     <section class="flex flex-col w-full m-1 ml-4">
 
         <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-wrap m-1 p-1">
+            <div class="flex flex-wrap space-x-1 m-1 p-1">
                 @foreach (var affiliation in Experience.Affiliations)
                 {
                     <Pill PillText=@affiliation Style="secondary" />
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="mx-1 mt-1 px-1 flex-grow">
+        <div class="mx-1 mt-1 px-1 flex flex-col flex-grow">
             <div class="flex flex-row justify-between">
                 <h3 class="font-extrabold text-xl
                            text-arcticblue-deep dark:text-darkarcticblue-default">
@@ -38,7 +38,7 @@
                     @(Experience.ToDate.HasValue ? Experience.ToDate.Value.ToString("MMM yyyy") : "Present")
                 </time>
             </div>
-            <ul class="m-2 ml-4 text-balance list-disc space-y-2">
+            <ul class="m-2 ml-4 my-auto text-balance list-disc space-y-2">
                 @foreach (var highlight in Experience.Highlights)
                 {
                     <li>
