@@ -11,7 +11,8 @@
 
         <NavMenu />
         <button @onclick="ToggleMobileMenu" class="flex md:hidden justify-center items-center cursor-pointer
-                       h-8 w-8 p-0.5 border-2 rounded-md @mobileMenuButtonBg">
+                       h-8 w-8 p-0.5 border-2 rounded-md @mobileMenuButtonBg
+                       border-arcticblue-light dark:border-darkarcticblue-light">
             <Icon Name="Burger" CssClass="w-full h-full text-arcticblue-deep dark:text-darkarcticblue-light" />
         </button>
         
@@ -38,7 +39,31 @@
              @onclick="ToggleMobileMenu">
 
         </div>
-        <div>
+        <div class="fixed bottom-0 h-40 w-screen
+                    inset-x-0 z-50 rounded-t-lg
+                    bg-arctic-snow dark:bg-darkarctic-midnight
+                    transition-all duration-500 @menuTrans">
+            <div class="relative">
+                <div class="absolute h-8 w-8 -top-10 right-6 border-2
+                            flex justify-center items-center rounded-md
+                            border-arcticblue-default dark:border-darkarcticblue-light
+                            hover:bg-arcticaurora-deep/50 dark:hover:bg-darkarcticaurora-deep/50
+                            transition-all duration-500"
+                    @onclick="ToggleMobileMenu">
+                    <Icon Name="ListDown" CssClass="h-5 w-5 text-arcticblue-deep dark:text-darkarcticblue-light" />
+                </div>
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-col justify-between p-4 space-y-16">
+                        <ThemeToggle />
+                        <SocialButtons />
+                    </div>
+                    <div class="flex items-center justify-center w-1/3">
+                        <CascadingValue Value="this">
+                            <MobileNavMenu />
+                        </CascadingValue>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>
@@ -49,12 +74,14 @@
     private bool isMobileMenuOpen = false;
     private string mobileMenuButtonBg = "";
     private string backgroundBlur = "invisible";
+    private string menuTrans = "invisible translate-y-40";
 
-    private void ToggleMobileMenu()
+    public void ToggleMobileMenu()
     {
         isMobileMenuOpen = !isMobileMenuOpen;
-        backgroundBlur = getCssClass(backgroundBlur, "invisible", "visible bg-arcticgray-deep/70 backdrop-blur-sm");
-        mobileMenuButtonBg = getCssClass(mobileMenuButtonBg, "", "bg-arcticaurora-deep dark:bg-darkarcticaurora-deep/50");
+        backgroundBlur = getCssClass(backgroundBlur, "invisible", "visible bg-arctic-glacier/70 dark:bg-darkarctic-void/70 backdrop-blur-xs");
+        mobileMenuButtonBg = getCssClass(mobileMenuButtonBg, "", "bg-arcticaurora-deep/50 dark:bg-darkarcticaurora-deep/50");
+        menuTrans = getCssClass(menuTrans, "invisible translate-y-40", "visible translate-y-0");
         StateHasChanged();
     }
 
