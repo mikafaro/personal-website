@@ -1,15 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="font-lora max-w-6xl mx-auto">
+<div class="font-lora max-w-6xl mx-auto px-2">
 
-    <header class="fixed flex z-50 items-center justify-center
-                    max-w-6xl mx-auto h-20 top-0 inset-x-0 px-6
+    <header class="fixed flex z-50 items-center justify-end md:justify-center
+                    max-w-6xl mx-auto h-12 md:h-20 top-0 inset-x-0 px-6
                     drop-shadow-lg  border-x-1 border-b-1 rounded-b-lg
                     bg-arctic-snow/80 border-arctic-snow/80 backdrop-blur-xs
                     dark:bg-darkarctic-midnight/80 dark:border-darkarctic-midnight/80
                     drop-shadow-arcticgray-light/80 dark:drop-shadow-darkarcticgray-deep/50">
 
         <NavMenu />
+        <button @onclick="ToggleMobileMenu" class="flex md:hidden justify-center items-center cursor-pointer
+                       h-8 w-8 p-0.5 border-2 rounded-md @mobileMenuButtonBg">
+            <Icon Name="Burger" CssClass="w-full h-full text-arcticblue-deep dark:text-darkarcticblue-light" />
+        </button>
         
     </header>
 
@@ -17,7 +21,7 @@
         @Body
     </div>
 
-    <footer class="fixed flex z-50 items-center justify-between
+    <footer class="hidden md:flex fixed z-50 items-center justify-between
                     bottom-0 inset-x-0 h-12 max-w-6xl mx-auto px-4
                     rounded-t-lg border-x-2 border-t-2 shadow-lg
                     border-arctic-snow/80 bg-arctic-snow/80 backdrop-blur-xs
@@ -27,4 +31,35 @@
         <SocialButtons />
     </footer>
 
+    <div class="md:hidden">
+        <div class="fixed top-0 bottom-0 h-full w-screen
+                    inset-x-0 @backgroundBlur
+                    z-30 transition-all duration-500"
+             @onclick="ToggleMobileMenu">
+
+        </div>
+        <div>
+            
+        </div>
+    </div>
+
 </div>
+
+@code {
+    private bool isMobileMenuOpen = false;
+    private string mobileMenuButtonBg = "";
+    private string backgroundBlur = "invisible";
+
+    private void ToggleMobileMenu()
+    {
+        isMobileMenuOpen = !isMobileMenuOpen;
+        backgroundBlur = getCssClass(backgroundBlur, "invisible", "visible bg-arcticgray-deep/70 backdrop-blur-sm");
+        mobileMenuButtonBg = getCssClass(mobileMenuButtonBg, "", "bg-arcticaurora-deep dark:bg-darkarcticaurora-deep/50");
+        StateHasChanged();
+    }
+
+    private string getCssClass(string value, string defaultValue, string otherValue)
+    {
+        return value == defaultValue ? otherValue : defaultValue;
+    }
+}
