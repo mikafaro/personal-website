@@ -4,6 +4,7 @@ public class ThemeService
 {
     private readonly IJSRuntime js;
     private bool isDark = false;
+    public event Action OnChange;
 
     public ThemeService(IJSRuntime js)
     {
@@ -15,6 +16,8 @@ public class ThemeService
         isDark = await js.InvokeAsync<bool>("getIsDark");
     }
 
+    private void NotifyStateChanged() => OnChange?.Invoke();
+
     private async Task ToggleTheme()
     {
         isDark = !isDark;
@@ -25,12 +28,14 @@ public class ThemeService
     {
         if (!isDark) return;
         await ToggleTheme();
+        NotifyStateChanged();
     }
 
     public async Task DarkToggle()
     {
         if (isDark) return;
         await ToggleTheme();
+        NotifyStateChanged();
     }
 
     public bool IsDarkMode()

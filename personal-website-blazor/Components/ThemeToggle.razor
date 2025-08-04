@@ -1,4 +1,6 @@
 @inject ThemeService Theme
+@implements IDisposable
+
 <div class="flex space-x-1 items-center">
     <button class="flex items-center justify-center cursor-pointer p-1 rounded-md
                    h-8 w-8 @SunBg" @onclick="LightToggle">
@@ -23,7 +25,18 @@
 
     protected override async Task OnInitializedAsync()
     {
+        Theme.OnChange += ThemeStateHasChanged;
         await Theme.InitializeAsync();
+    }
+
+    public void Dispose()
+    {
+        Theme.OnChange -= ThemeStateHasChanged;
+    }
+
+    private void ThemeStateHasChanged()
+    {
+        StateHasChanged();
     }
 
     private string ButtonBgClass = "bg-arcticaurora-deep/50 dark:bg-darkarcticaurora-deep/50";
