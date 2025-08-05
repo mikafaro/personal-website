@@ -55,7 +55,7 @@ jobs:
         working-directory: ./personal-website-blazor
 
       - name: Publish Blazor App
-        run: dotnet publish --configuration Release --output ${{ github.workspace }}/publish
+        run: dotnet publish --configuration Release --output publish
         working-directory: ./personal-website-blazor
 
       - name: Build And Deploy
@@ -82,4 +82,6 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_ISLAND_05D874503 }}
+          app_location: ./personal-website-blazor
           action: "close"
