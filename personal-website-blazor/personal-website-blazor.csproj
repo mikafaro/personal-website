@@ -11,9 +11,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.6" PrivateAssets="all" />
   </ItemGroup>
 
-  <Target Name="Tailwind" BeforeTargets="Build">
-    <Exec Command="npm install" WorkingDirectory="." />
-    <Exec Command="npm run build" WorkingDirectory="." />
-  </Target>
-
 </Project>
