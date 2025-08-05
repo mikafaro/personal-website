@@ -55,7 +55,7 @@ jobs:
         working-directory: ./personal-website-blazor
 
       - name: Publish Blazor App
-        run: dotnet publish --configuration Release --output publish
+        run: dotnet publish --configuration Release --output ${{ github.workspace }}/publish
         working-directory: ./personal-website-blazor
 
       - name: Build And Deploy
@@ -66,9 +66,9 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./personal-website-blazor" # App source code path
+          app_location: "publish/wwwroot" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "publish/wwwroot" # Built app content directory - optional
+          output_location: "" # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           skip_app_build: true
           ###### End of Repository/Build Configurations ######
