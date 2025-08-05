@@ -32,11 +32,31 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-      - name: Tailwind Build
-        run: |
-          npm i
-          npm run build
-          rm package.json
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.x'
+      
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+        
+      - name: Restore NuGet dependencies
+        run: dotnet restore ./personal-website-blazor
+
+      - name: Install Tailwind CSS dependencies
+        run: npm install
+        working-directory: ./personal-website-blazor
+
+      - name: Run Tailwind CSS build
+        run: npm run build
+        working-directory: ./personal-website-blazor
+
+      - name: Publish Blazor App
+        run: dotnet publish ./personal-website-blazor --configuration Release --output ${{ env.DOTNET_ROOT }}
+
         working-directory: ./personal-website-blazor
       - name: Build And Deploy
         id: builddeploy
