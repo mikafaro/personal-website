@@ -1,0 +1,27 @@
+<div class="rounded-md px-2 py-1 my-0.5 text-xs @CssClass">
+    @PillText
+</div>
+
+@code {
+    [Parameter]
+    public required string PillText { get; set; }
+
+    [Parameter]
+    public required string Style { get; set; }
+
+    private string? CssClass;
+
+    protected override void OnParametersSet()
+    {
+        if (Style == "primary")
+        {
+            CssClass = @"bg-arcticblue-deep text-arctic-snow
+                         dark:bg-darkarcticblue-light dark:text-darkarctic-midnight";
+        }
+        else if (Style == "secondary")
+        {
+            CssClass = @"border-1 border-arcticgray-default text-arcticgray-dark
+                         dark:border-darkarcticgray-deep dark:text-darkarcticgray-default";
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@theme {
+
+    /* Font */
+
+    --font-inter: Inter, sans-serif;
+    --font-lora: Lora, serif;
+    --font-montserrat: Montserrat, sans-serif;
+
+    /* Easing Functions */
+
+    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+    /* --- Light Arctic Palette --- */
+
+    /* Light tones for backgrounds and whitespace */
+    --color-arctic-snow: oklch(0.9842 0.0034 247.86);
+    --color-arctic-ice:  oklch(0.9653 0.0069 247.9);
+    --color-arctic-glacier: oklch(0.9445 0.0109 234.82);
+
+    /* Cool grays for the subtle elements, text */
+    --color-arcticgray-light: oklch(0.9022 0.0146 244.73);
+    --color-arcticgray-default: oklch(0.7834 0.0274 242.84);
+    --color-arcticgray-dark: oklch(0.4214 0.0273 248.48);
+
+    /* Icy blues and subtle teals, more prominent text, standout elements */
+    --color-arcticblue-light: oklch(0.8648 0.0495 232.28);
+    --color-arcticblue-default: oklch(0.708 0.0751 234.36);
+    --color-arcticblue-deep: oklch(0.5154 0.0933 249.64);
+    --color-arcticblue-teal: oklch(0.756 0.0859 178.26);
+
+    /* Aurora inspired accents */
+    --color-arcticaurora-light: oklch(0.9289 0.0397 156.84);
+    --color-arcticaurora-default: oklch(0.8412 0.0693 155.72);
+    --color-arcticaurora-deep: oklch(0.7059 0.082 157.19);
+
+    /* Other accents for small details */
+    --color-arcticaccent-pink: oklch(0.8684 0.019 17.52);
+    --color-arcticaccent-lilac: oklch(0.7811 0.0514 278.92);
+
+
+    /* --- Dark Arctic Palette */
+
+    /* Deepest tones for backgrounds */
+    --color-darkarctic-void: oklch(0.2077 0.0398 265.75);
+    --color-darkarctic-midnight: oklch(0.2795 0.0368 260.03);
+    --color-darkarctic-twilight: oklch(0.3717 0.0392 257.29);
+
+    /* Lighter, cool grays for subtle elements, borders, secondary text */
+    --color-darkarcticgray-deep: oklch(0.4455 0.0374 257.28);
+    --color-darkarcticgray-default: oklch(0.5544 0.0407 257.42);
+    --color-darkarcticgray-light: oklch(0.7107 0.0351 256.79);
+
+    /* Icy blues and subtle teals for primary text, accents, interactive elements */
+    --color-darkarcticblue-default: oklch(0.8276 0.1013 230.32);
+    --color-darkarcticblue-light: oklch(0.9014 0.0555 230.9);
+    --color-darkarcticblue-deep: oklch(0.7535 0.139 232.66);
+    --color-darkarcticblue-teal: oklch(0.7845 0.1325 181.91);
+
+    /* Aurora inspired accents for dark theme */
+    --color-darkarcticaurora-light: oklch(0.93 0.0803 172.29);
+    --color-darkarcticaurora-default: oklch(0.8482 0.1091 164.66);
+    --color-darkarcticaurora-deep: oklch(0.7415 0.1124 168.25);
+
+    /* Other accents for small details */
+    --color-darkarcticaccent-pink: oklch(0.7253 0.1752 349.76);
+    --color-darkarcticaccent-lilac: oklch(0.709 0.1592 293.54);
+}

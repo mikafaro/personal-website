@@ -1,0 +1,66 @@
+@using PersonalWebsiteBlazor.Models
+
+<article class="flex flex-row rounded-lg min-h-60 shadow-lg
+                mx-2 md:mx-4 my-4 cursor-default hover:scale-102
+                transition-all duration-300 ease-out overflow-auto
+              bg-arctic-snow dark:bg-darkarctic-midnight
+              border-arcticblue-default dark:border-darkarcticblue-default
+              shadow-arcticgray-light hover:shadow-arcticaurora-deep/50
+              dark:shadow-darkarcticgray-deep/50 dark:hover:shadow-darkarcticaurora-deep/50">
+
+    <div class="hidden md:flex lg:aspect-square flex-shrink-0">
+        <img src=@Project.Image class="h-full w-full object-cover rounded-l-lg" />
+    </div>
+
+    <section class="flex flex-col w-full m-1 ml-4">
+
+        <div class="flex flex-row items-center justify-between">
+
+            <div class="flex flex-wrap space-x-1 m-1 p-1">
+                @foreach (var item in Project.Technologies)
+                {
+                    <Pill PillText=@item Style="primary" />
+                }
+            </div>
+
+            <div class="flex p-1">
+                <Pill PillText=@Project.ProjectEffortType Style="secondary" />
+            </div>
+        </div>
+
+        <div class="mx-1 mt-1 px-1 flex-grow">
+            <div class="flex flex-row justify-between">
+                <h3 class="font-extrabold text-xl
+                         text-arcticblue-deep dark:text-darkarcticblue-default">
+                    @Project.ProjectTitle
+                </h3>
+                <time class="text-sm italic" datetime="@Project.Date.ToString("MMM yyyy")">@Project.Date.ToString("MMM yyyy")</time>
+            </div>
+            <p class="md:pr-8 pt-2 leading-relaxed">@Project.Description</p>
+        </div>
+
+        <footer class="flex flex-row justify-end mt-auto mb-1 px-1 pt-1">
+            @if (Project.CodeURL != null)
+            {
+                <a href=@Project.CodeURL target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-center cursor-pointer p-1 rounded-lg
+                          h-9 w-9 text-arcticblue-deep dark:text-darkarcticblue-light
+                          hover:bg-arcticaurora-deep/50 hover:shadow-md shadow-arcticgray-dark/50
+                          dark:hover:bg-darkarcticaurora-deep/50">
+                    <Icon Name="Code" CssClass="h-7 w-7" />
+                </a>
+            }
+            else
+            {
+                <p class="text-xs text-arcticgray-default dark:text-darkarcticgray-deep">The code for this project is not publicly available.</p>
+            }
+        </footer>
+
+    </section>
+
+</article>
+
+@code {
+    [Parameter]
+    public required Project Project { get; set; }
+}

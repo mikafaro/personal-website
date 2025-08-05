@@ -1,0 +1,24 @@
+<nav class="flex">
+    <ul class="flex flex-col space-y-1">
+        <li class="navmenutext">
+            <NavLink href="about" Match="NavLinkMatch.All" @onclick="layout.ToggleMobileMenu">
+                About
+            </NavLink>
+        </li>
+        <li class="navmenutext">
+            <NavLink href="projects" @onclick="layout.ToggleMobileMenu">
+                Projects
+            </NavLink>
+        </li>
+        <li class="navmenutext">
+            <NavLink href="experience" @onclick="layout.ToggleMobileMenu">
+                Experience
+            </NavLink>
+        </li>
+    </ul>
+</nav>
+
+@code {
+    [CascadingParameter]
+    MainLayout layout { get; set; }
+}

@@ -1,0 +1,9 @@
+<h2 class="text-center text-3xl font-bold font-montserrat mb-6
+            text-arcticblue-deep dark:text-darkarcticblue-default">
+    @ChildContent
+</h2>
+
+@code {
+    [Parameter]
+    public required RenderFragment ChildContent {get; set;}
+}

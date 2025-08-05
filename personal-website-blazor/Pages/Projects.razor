@@ -1,0 +1,62 @@
+@page "/projects"
+
+@using PersonalWebsiteBlazor.Models
+
+<div class="flex flex-col max-w-5xl mx-auto">
+
+    <Title>Projects</Title>
+
+    @foreach (var project in projects)
+    {
+        <ProjectCard Project="project" />
+    }
+
+</div>
+
+@code {
+    List<Project> projects = new List<Project>
+    {
+        new Project {
+            ProjectTitle = "The Pursuit of Koala Tea",
+            Date = new DateOnly(2023, 05, 01),
+            ProjectEffortType = "Team",
+            Technologies = ["Game Design", "Java", "LibGDX", "MVC"],
+            Description = @"This roguelike game about a koala looking for tea
+                            was a collaborative effort between myself and 3 other students
+                            during the course 'Introduction to System Design' at UiB, as part of
+                            our term project.",
+            CodeURL = null,
+            Image = "images/project-koala-square.jpg"
+        },
+        new Project {
+            ProjectTitle = "FeedApp",
+            Date = new DateOnly(2024, 12, 01),
+            ProjectEffortType = "Team",
+            Technologies = ["Python", "JavaScript", "Django", "React", "RabbitMQ", "PostgreSQL", "Docker"],
+            Description = @"This was a term project in 'Advanced Software Technolgies' at HvL,
+                            where I collaborated with 2 other students on this fullstack polling
+                            application. It provided my first experience integrating different parts of
+                            a fullstack application, with front-end, back-end, database,
+                            messaging, and containerization.",
+            CodeURL = null,
+            Image = null
+        },
+        new Project {
+            ProjectTitle = "Personal Website",
+            Date = new DateOnly (2025, 07, 01),
+            ProjectEffortType = "Solo",
+            Technologies = ["Blazor", "C#", "TailwindCSS", "UI Components", "Azure Static Web Apps"],
+            Description = @"The website you are currently viewing. I built it after learning Blazor,
+                            deciding to utilize this framework to make an appearance on the world wide web.
+                            Although most of my schooling is in back-end development, it has been interesting
+                            learning some of the front-end skillset. The site is hosted on Azure Static Web Apps.",
+            CodeURL = "https://github.com/mikafaro/personal-website",
+            Image = ""
+        }
+    };
+
+    protected override void OnInitialized()
+    {
+        projects = projects.OrderByDescending(p => p.Date).ToList();
+    }
+}

@@ -4,14 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>personal-website-blazor</title>
+    <title>Mikael Færøvik's Website</title>
     <base href="/" />
     <link rel="stylesheet" href="css/app.css" />
-    <!-- If you add any scoped CSS files, uncomment the following to load them
-    <link href="personal-website-blazor.styles.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/tailwind.css" />
+
+    <script>
+        // in line in head to make first load of theme work correctly
+        window.setTheme = () => {
+            if (localStorage.theme === 'dark' ||
+                (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        }
+
+        setTheme();
+    </script>
+
 </head>
 
-<body>
+<body class="bg-arctic-ice dark:bg-darkarctic-void
+             text-arcticgray-dark dark:text-darkarcticgray-light">
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
@@ -26,6 +41,7 @@
         <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="js/theme-functions.js"></script>
 </body>
 
 </html>
