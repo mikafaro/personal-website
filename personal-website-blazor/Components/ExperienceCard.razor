@@ -12,10 +12,10 @@
         <img src=@Experience.Image class="object-cover w-full rounded-t-lg md:rounded-tr-none md:rounded-l-lg" />
     </div>
 
-    <section class="flex flex-col w-full m-1 ml-4">
+    <section class="flex flex-col w-full px-1 m-1 md:ml-4">
 
         <div class="flex flex-row items-center justify-between">
-            <div class="flex flex-wrap space-x-1 m-1 p-1">
+            <div class="flex flex-wrap space-x-1 p-1">
                 @foreach (var affiliation in Experience.Affiliations)
                 {
                     <Pill PillText=@affiliation Style="secondary" />
@@ -38,7 +38,7 @@
                     @(Experience.ToDate.HasValue ? Experience.ToDate.Value.ToString("MMM yyyy") : "Present")
                 </time>
             </div>
-            <ul class="m-2 ml-4 mt-3 text-balance list-disc space-y-2 leading-relaxed">
+            <ul class="my-3 md:mb-0 text-balance space-y-2 leading-relaxed">
                 @Experience.Description
             </ul>
         </div>

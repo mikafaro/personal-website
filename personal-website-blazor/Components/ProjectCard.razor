@@ -12,11 +12,11 @@
         <img src=@Project.Image class="object-cover w-full md:rounded-l-lg rounded-t-lg md:rounded-tr-none" />
     </div>
 
-    <section class="flex flex-col w-full m-1 ml-4">
+    <section class="flex flex-col w-full px-1 m-1 md:ml-4">
 
         <div class="flex flex-row items-center justify-between">
 
-            <div class="flex flex-wrap space-x-1 m-1 p-1">
+            <div class="flex flex-wrap space-x-1 p-1">
                 @foreach (var item in Project.Technologies)
                 {
                     <Pill PillText=@item Style="primary" />
