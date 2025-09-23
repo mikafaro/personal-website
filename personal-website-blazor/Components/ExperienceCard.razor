@@ -1,15 +1,15 @@
 @using PersonalWebsiteBlazor.Models
 
-<article class="flex flex-row rounded-lg lg:min-h-90 shadow-lg
+<article class="flex flex-col md:flex-row rounded-lg min-h-60 shadow-lg
                 mx-2 md:mx-4 my-4 cursor-default hover:scale-102
-                transition-all duration-300 ease-out overflow-auto
+                transition-all duration-300 ease-out 
                 bg-arctic-snow dark:bg-darkarctic-midnight
                 border-arcticblue-default dark:border-darkarcticblue-default
                 shadow-arcticgray-light hover:shadow-arcticaurora-deep/50
                 dark:shadow-darkarcticgray-deep/50 dark:hover:shadow-darkarcticaurora-deep/50">
 
-    <div class="hidden md:flex lg:aspect-[1/1.618] flex-shrink-0">
-        <img src=@Experience.Image class="object-cover" />
+    <div class="w-full md:w-auto h-50 md:min-h-60 flex md:aspect-square">
+        <img src=@Experience.Image class="object-cover w-full rounded-t-lg md:rounded-tr-none md:rounded-l-lg" />
     </div>
 
     <section class="flex flex-col w-full m-1 ml-4">
@@ -39,12 +39,7 @@
                 </time>
             </div>
             <ul class="m-2 ml-4 mt-3 text-balance list-disc space-y-2 leading-relaxed">
-                @foreach (var highlight in Experience.Highlights)
-                {
-                    <li>
-                        @highlight
-                    </li>
-                }
+                @Experience.Description
             </ul>
         </div>
 
@@ -59,9 +54,9 @@
             {
                 <a href=@Experience.LinkURL target="_blank" rel="noopener noreferrer"
                    class="flex items-center justify-center cursor-pointer m-1 rounded-lg
-                          h-9 w-9 hover:bg-arcticaccent-pink text-arcticblue-deep
+                          h-9 w-9 hover:bg-arcticaurora-deep/50 text-arcticblue-deep
                           hover:shadow-md shadow-arcticgray-dark/50 flex-shrink-0
-                          dark:text-arcticblue-light dark:hover:bg-darkarcticaccent-pink/50
+                          dark:text-arcticblue-light dark:hover:bg-darkarcticaurora-deep/50
                           dark:shadow-darkarcticgray-light/50">
                     <Icon Name="Link" CssClass="h-7 w-7" />
                 </a>

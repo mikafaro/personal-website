@@ -8,7 +8,7 @@ namespace PersonalWebsiteBlazor.Models
         public required DateOnly FromDate { get; set; }
         public DateOnly? ToDate { get; set; }
         public required List<string> Keywords { get; set; }
-        public required List<string> Highlights { get; set; }
+        public required string Description { get; set; }
         public string? LinkURL { get; set; }
         public string? Image { get; set; }
     }
