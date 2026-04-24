@@ -4,7 +4,10 @@
     "watch": "npx @tailwindcss/cli -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --watch"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/cli": "^4.1.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
     "tailwindcss": "^4.2.4"
   }
 }
