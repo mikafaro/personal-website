@@ -16,6 +16,7 @@ namespace PersonalWebsiteBlazor.Models
     public enum ExperienceType
     {
         Degree,
+        Course,
         Certification,
         FullTimeEmployment,
         PartTimeEmployment,
@@ -31,6 +32,7 @@ namespace PersonalWebsiteBlazor.Models
                 ExperienceType.FullTimeEmployment => "Full Time",
                 ExperienceType.PartTimeEmployment => "Part Time",
                 ExperienceType.Degree => "Degree",
+                ExperienceType.Course => "Individual Course",
                 ExperienceType.Certification => "Certification",
                 ExperienceType.Internship => "Internship",
                 _ => type.ToString()
